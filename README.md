@@ -6,7 +6,7 @@ Dashboard desenvolvido para o Checkpoint 5 de FrontEnd Design.
 
 - Bruno Minitti — RM: 571981
 - Lucas Rodrigues — RM: 569742
-- [Nome do integrante] — RM: 573079
+- Nicolas Gomes de Almeida — RM: 573079
 
 ## Tecnologias
 
