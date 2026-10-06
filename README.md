@@ -20,7 +20,7 @@ Dashboard desenvolvido para o Checkpoint 5 de FrontEnd Design.
 
 - Dashboard responsivo com Navbar e Sidebar.
 - Informações do usuário e dropdown.
-- Campo visual de pesquisa.
+- Pesquisa de projetos pelo texto dos cards.
 - Quatro cards de indicadores.
 - Seis cards de projetos em Grid com tamanhos diferentes.
 - Modal de novo projeto com validação visual.
@@ -41,7 +41,6 @@ Para gerar a versão de produção, execute `npm run build`.
 ## Observações
 
 Os projetos e indicadores são exemplos fixos.
-O campo de pesquisa é apenas visual.
 O formulário demonstra a validação dos dados, sem salvar projetos.
 
 ## GitHub

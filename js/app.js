@@ -132,3 +132,18 @@ campos.forEach(function (campo) {
         }
     });
 });
+
+// Pesquisa de projetos
+
+const pesquisa = document.querySelector("#pesquisa");
+const projetos = document.querySelectorAll("#projetos article");
+
+pesquisa.addEventListener("input", function () {
+    const termo = pesquisa.value.trim().toLowerCase();
+
+    projetos.forEach(function (projeto) {
+        const texto = projeto.textContent.toLowerCase();
+
+        projeto.classList.toggle("hidden", !texto.includes(termo));
+    });
+});
