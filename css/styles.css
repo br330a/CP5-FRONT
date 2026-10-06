@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+html {
+    color-scheme: light;
+}
+
+html.dark {
+    color-scheme: dark;
+}
+
+button,
+select {
+    cursor: pointer;
+}
+
+dialog::backdrop {
+    background: rgb(0 0 0 / 60%);
+}
+
+.campo {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 10px;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    background: transparent;
+}
+
+.campo:focus {
+    outline: 2px solid #6366f1;
+}
+
+select option {
+    color: #1e293b;
+    background: white;
+}
+
+.dark select option {
+    color: white;
+    background: #1e293b;
+}
+
+.erro {
+    border: 2px solid #e11d48;
+}
+
+.sucesso {
+    border: 2px solid #16a34a;
+}
+
+small {
+    display: block;
+    margin-top: 4px;
+    color: #e11d48;
+}
+
+.dark small {
+    color: #fda4af;
+}

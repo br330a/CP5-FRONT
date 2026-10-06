@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFlow</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <script type="module" src="/js/app.js"></script>
+</head>
+
+<body class="bg-slate-100 text-slate-800 dark:bg-slate-950 dark:text-white">
+
+    <!-- Navbar -->
+    <header class="flex items-center justify-between gap-4 bg-white p-4 dark:bg-slate-900">
+        <div class="flex items-center gap-4">
+            <button id="botao-menu" aria-label="Abrir ou fechar menu" aria-expanded="false" aria-controls="sidebar"
+                class="rounded p-2 hover:bg-slate-200 dark:hover:bg-slate-700 lg:hidden">
+                ☰
+            </button>
+
+            <h1 class="text-xl font-bold text-indigo-600 dark:text-indigo-400">
+                TechFlow
+            </h1>
+        </div>
+
+        <div id="area-usuario" class="relative">
+            <button id="botao-usuario" aria-expanded="false" aria-controls="dropdown"
+                class="rounded-lg p-2 transition hover:bg-slate-100 focus:ring-2 focus:ring-indigo-500 dark:hover:bg-slate-800">
+                Bruno ▾
+            </button>
+
+            <div id="dropdown"
+                class="absolute right-0 z-20 mt-2 hidden w-52 rounded-lg border border-slate-300 bg-white p-4 shadow-lg dark:border-slate-700 dark:bg-slate-800">
+                <p class="font-bold">Bruno Minitti</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                    Administrador
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex min-h-screen">
+
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="fixed inset-y-16 left-0 z-10 hidden w-56 shrink-0 bg-white p-5 shadow-lg dark:bg-slate-900 lg:static lg:block lg:shadow-none">
+            <nav class="flex flex-col gap-3">
+                <a href="#dashboard"
+                    class="rounded-lg bg-indigo-100 p-3 text-indigo-800 transition hover:bg-indigo-200">
+                    Dashboard
+                </a>
+
+                <a href="#projetos" class="rounded-lg p-3 transition hover:bg-slate-100 dark:hover:bg-slate-800">
+                    Projetos
+                </a>
+            </nav>
+
+            <label for="tema" class="mb-2 mt-8 block text-sm">
+                Tema
+            </label>
+
+            <select id="tema"
+                class="w-full rounded-lg border border-slate-300 bg-white p-2 dark:border-slate-600 dark:bg-slate-800">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="system">System</option>
+            </select>
+        </aside>
+
+        <!-- Conteúdo -->
+        <main id="dashboard" class="min-w-0 flex-1 p-4 sm:p-6 xl:p-8 2xl:p-10">
+            <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold">Dashboard</h2>
+                    <p class="text-slate-500 dark:text-slate-400">
+                        Acompanhe os projetos da empresa.
+                    </p>
+                </div>
+
+                <button id="novo-projeto"
+                    class="rounded-lg bg-indigo-600 px-4 py-2 text-white transition duration-200 ease-in-out hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300 active:scale-95">
+                    + Novo projeto
+                </button>
+            </div>
+
+            <!-- Indicadores com dados de exemplo -->
+            <section aria-label="Indicadores" class="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                <article class="rounded-lg bg-white p-5 dark:bg-slate-900">
+                    <h3>Projetos ativos</h3>
+                    <p class="mt-2 text-3xl font-bold text-indigo-500">4</p>
+                </article>
+
+                <article class="rounded-lg bg-white p-5 dark:bg-slate-900">
+                    <h3>Projetos concluídos</h3>
+                    <p class="mt-2 text-3xl font-bold text-green-500">2</p>
+                </article>
+
+                <article class="rounded-lg bg-white p-5 dark:bg-slate-900">
+                    <h3>Tarefas pendentes</h3>
+                    <p class="mt-2 text-3xl font-bold text-amber-500">12</p>
+                </article>
+
+                <article class="rounded-lg bg-white p-5 dark:bg-slate-900">
+                    <h3>Equipes</h3>
+                    <p class="mt-2 text-3xl font-bold text-sky-500">3</p>
+                </article>
+            </section>
+
+            <section id="projetos">
+                <div class="mb-4 flex flex-col justify-between gap-3 md:flex-row md:items-center">
+                    <h2 class="text-xl font-bold">Projetos</h2>
+
+                    <div>
+                        <label for="pesquisa" class="sr-only">Pesquisar projetos</label>
+                        <input id="pesquisa" type="search" placeholder="Pesquisar projetos"
+                            class="w-full rounded-lg border border-slate-300 bg-white p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 md:w-64">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+
+                    <article
+                        class="group rounded-lg bg-white p-5 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg dark:bg-slate-900 md:col-span-2">
+                        <h3 class="font-bold group-hover:text-indigo-500">Portal do cliente</h3>
+                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                            Desenvolvimento de uma plataforma de atendimento.
+                        </p>
+                        <p class="mt-4 text-sm">Responsável: Bruno • Em andamento</p>
+                    </article>
+
+                    <article
+                        class="group rounded-lg bg-white p-5 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg dark:bg-slate-900 xl:row-span-2">
+                        <h3 class="font-bold group-hover:text-indigo-500">Aplicativo mobile</h3>
+                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                            Aplicativo para acessar os serviços da empresa.
+                        </p>
+                        <p class="mt-4 text-sm">Responsável: Nicolas • Em andamento</p>
+                    </article>
+
+                    <article
+                        class="group rounded-lg bg-white p-5 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg dark:bg-slate-900">
+                        <h3 class="font-bold group-hover:text-indigo-500">Identidade visual</h3>
+                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                            Criação da identidade visual da TechFlow.
+                        </p>
+                        <p class="mt-4 text-sm">Responsável: Lucas • Concluído</p>
+                    </article>
+
+                    <article
+                        class="group rounded-lg bg-white p-5 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg dark:bg-slate-900">
+                        <h3 class="font-bold group-hover:text-indigo-500">Campanha digital</h3>
+                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                            Divulgação dos serviços nas redes sociais.
+                        </p>
+                        <p class="mt-4 text-sm">Responsável: Ana • Em andamento</p>
+                    </article>
+
+                    <article
+                        class="group rounded-lg bg-white p-5 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg dark:bg-slate-900">
+                        <h3 class="font-bold group-hover:text-indigo-500">Site institucional</h3>
+                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                            Apresentação da empresa e seus serviços.
+                        </p>
+                        <p class="mt-4 text-sm">Responsável: Bruno • Concluído</p>
+                    </article>
+
+                    <article
+                        class="group rounded-lg bg-white p-5 transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg dark:bg-slate-900">
+                        <h3 class="font-bold group-hover:text-indigo-500">Painel de vendas</h3>
+                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                            Interface para acompanhar os resultados comerciais.
+                        </p>
+                        <p class="mt-4 text-sm">Responsável: Nicolas • Em andamento</p>
+                    </article>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <dialog id="modal" aria-labelledby="titulo-modal"
+        class="m-auto max-h-[90vh] w-11/12 max-w-lg overflow-y-auto rounded-xl bg-white p-6 text-slate-800 dark:bg-slate-900 dark:text-white">
+        <div class="mb-4 flex items-center justify-between">
+            <h2 id="titulo-modal" class="text-xl font-bold">Novo projeto</h2>
+            <button id="fechar-modal" aria-label="Fechar modal"
+                class="rounded p-2 hover:bg-slate-200 dark:hover:bg-slate-700">
+                ✕
+            </button>
+        </div>
+
+        <form id="formulario" novalidate class="flex flex-col gap-3">
+
+            <div>
+                <label for="nome">Nome</label>
+                <input id="nome" required minlength="3" aria-describedby="erro-nome" class="campo">
+                <small id="erro-nome"></small>
+            </div>
+
+            <div>
+                <label for="responsavel">Responsável</label>
+                <input id="responsavel" required minlength="3" aria-describedby="erro-responsavel" class="campo">
+                <small id="erro-responsavel"></small>
+            </div>
+
+            <div>
+                <label for="categoria">Categoria</label>
+                <select id="categoria" required aria-describedby="erro-categoria" class="campo">
+                    <option value="">Selecione</option>
+                    <option>Desenvolvimento</option>
+                    <option>Design</option>
+                    <option>Marketing</option>
+                </select>
+                <small id="erro-categoria"></small>
+            </div>
+
+            <div>
+                <label for="prioridade">Prioridade</label>
+                <select id="prioridade" required aria-describedby="erro-prioridade" class="campo">
+                    <option value="">Selecione</option>
+                    <option>Baixa</option>
+                    <option>Média</option>
+                    <option>Alta</option>
+                </select>
+                <small id="erro-prioridade"></small>
+            </div>
+
+            <div>
+                <label for="prazo">Prazo</label>
+                <input id="prazo" type="date" required aria-describedby="erro-prazo" class="campo">
+                <small id="erro-prazo"></small>
+            </div>
+
+            <div>
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" rows="3" required minlength="10" aria-describedby="erro-descricao"
+                    class="campo"></textarea>
+                <small id="erro-descricao"></small>
+            </div>
+
+            <p id="mensagem" role="status" class="text-sm text-green-700 dark:text-green-400"></p>
+
+            <button id="cadastrar" type="submit"
+                class="rounded-lg bg-indigo-600 p-3 text-white transition duration-200 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50">
+                Cadastrar
+            </button>
+        </form>
+    </dialog>
+
+</body>
+
+</html>
