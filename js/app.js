@@ -147,3 +147,20 @@ pesquisa.addEventListener("input", function () {
         projeto.classList.toggle("hidden", !texto.includes(termo));
     });
 });
+
+// Destaque do menu selecionado
+
+const linksMenu = document.querySelectorAll("#sidebar nav a");
+
+linksMenu.forEach(function (link) {
+    link.addEventListener("click", function () {
+        linksMenu.forEach(function (item) {
+            const selecionado = item === link;
+
+            item.classList.toggle("bg-indigo-100", selecionado);
+            item.classList.toggle("text-indigo-800", selecionado);
+            item.classList.toggle("dark:bg-white", selecionado);
+            item.classList.toggle("dark:text-slate-900", selecionado);
+        });
+    });
+});
